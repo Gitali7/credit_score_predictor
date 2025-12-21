@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CreditScore Predictor | AI Risk Analysis</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-gradient"></div>
+
+    <div class="container">
+        <header>
+            <h1>CreditScore Predictor</h1>
+            <p>AI-Powered Loan Default Risk Assessment</p>
+        </header>
+
+        <main class="card">
+            <form id="predictionForm">
+                <!-- Section 1: Financials -->
+                <div class="form-section">
+                    <h2>💰 Financial Profile</h2>
+
+                    <div class="input-group">
+                        <label for="monthly_income">Monthly Income ($)</label>
+                        <input type="number" id="monthly_income" placeholder="e.g. 5000" required min="1">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="monthly_debt_payments">Total Monthly Debt Payments ($)</label>
+                        <input type="number" id="monthly_debt_payments" placeholder="e.g. 1000" required min="0">
+                        <small class="hint">Includes rent, other loan EMIs, etc.</small>
+                    </div>
+                </div>
+
+                <!-- Section 2: Loan Request -->
+                <div class="form-section">
+                    <h2>🏦 Loan Details</h2>
+
+                    <div class="input-group">
+                        <label for="loan_amount">Requested Loan Amount ($)</label>
+                        <input type="number" id="loan_amount" placeholder="e.g. 20000" required min="1000">
+                    </div>
+                </div>
+
+                <!-- Section 3: Credit History & Assets -->
+                <div class="form-section">
+                    <h2>📜 Credit Profile</h2>
+
+                    <div class="input-group">
+                        <label for="home_ownership">Home Ownership Status</label>
+                        <select id="home_ownership" required>
+                            <option value="" disabled selected>Select status</option>
+                            <option value="RENT">Rent</option>
+                            <option value="MORTGAGE">Mortgage</option>
+                            <option value="OWN">Own</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="total_open_accounts">Total Open Credit Lines</label>
+                        <input type="number" id="total_open_accounts" placeholder="e.g. 5" required min="0">
+                        <small class="hint">Credit cards, loans, mortgages, etc.</small>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="missed_installments">Missed Installments (Last 2 Years)</label>
+                        <input type="number" id="missed_installments" placeholder="e.g. 0" required min="0">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="credit_card_balance">Current Credit Card Balance ($)</label>
+                        <input type="number" id="credit_card_balance" placeholder="e.g. 500" required min="0">
+                    </div>
+                </div>
+
+                <div id="error-message" class="error-box hidden"></div>
+
+                <button type="submit" id="predictBtn">Predict Risk</button>
+            </form>
+
+            <div id="result-card" class="result-card hidden">
+                <div id="loader" class="loader hidden"></div>
+                <div id="result-content">
+                    <h3>Risk Assessment</h3>
+                    <div class="gauge">
+                        <div id="risk-score">0%</div>
+                    </div>
+                    <h2 id="risk-category">Low Risk</h2>
+                    <p id="risk-message">Based on your inputs, the probability of default is low.</p>
+                    <button id="resetBtn" class="secondary-btn">Check Another</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
