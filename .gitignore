@@ -1,17 +1,5 @@
-# Virtual environment
 venv/
-
-# Python cache
 __pycache__/
 *.pyc
-
-# Logs
-*.log
-
-# Model files
-*.pkl
-
-# IDE configs
-.vscode/
-.idea/
-. 
+.env
+.DS_Store
