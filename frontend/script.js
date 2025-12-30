@@ -88,10 +88,17 @@ function displayResult(data) {
     msgEl.textContent = data.message;
 
     const tipsEl = document.getElementById('improvement-tips');
+    const maintenanceEl = document.getElementById('maintenance-tips');
+
+    // Reset visibility
+    tipsEl.classList.add('hidden');
+    maintenanceEl.classList.add('hidden');
+
     if (data.risk_category.toLowerCase().includes('high')) {
         tipsEl.classList.remove('hidden');
     } else {
-        tipsEl.classList.add('hidden');
+        // Assume Low or Medium Risk -> Show maintenance tips
+        maintenanceEl.classList.remove('hidden');
     }
 }
 
