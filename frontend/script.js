@@ -42,7 +42,7 @@ form.addEventListener('submit', async (e) => {
     // 4. Send to Backend
     setLoading(true);
     try {
-        const response = await fetch('http://localhost:8000/predict', {
+        const response = await fetch('/predict', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -86,6 +86,13 @@ function displayResult(data) {
     catEl.style.color = data.color;
 
     msgEl.textContent = data.message;
+
+    const tipsEl = document.getElementById('improvement-tips');
+    if (data.risk_category.toLowerCase().includes('high')) {
+        tipsEl.classList.remove('hidden');
+    } else {
+        tipsEl.classList.add('hidden');
+    }
 }
 
 function showError(msg) {

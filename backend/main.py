@@ -28,7 +28,7 @@ try:
     print("Model pipeline loaded successfully.")
     print("---------------------------------------------------------")
     print("   🚀 CREDIT SCORE PREDICTOR SERVER STARTED   ")
-    print("   Frontend is mounted at http://127.0.0.1:8000      ")
+    print("   Frontend is mounted at http://127.0.0.1:8005      ")
     print("---------------------------------------------------------")
 except Exception as e:
     print(f"Error loading model: {e}")
