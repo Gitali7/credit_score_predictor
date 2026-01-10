@@ -20,6 +20,9 @@ A premium, full-stack AI application that predicts loan default risk using Logis
 ### Prerequisites
 - Python 3.8+
 - pip
+python -m venv venv 
+venv/scripts/activate
+
 
 ### 1. Setup Backend
 ```bash
